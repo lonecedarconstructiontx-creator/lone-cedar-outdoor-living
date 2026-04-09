@@ -134,6 +134,53 @@ h2 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 16px; }
   margin-left: auto;
 }
 
+/* ---- DROPDOWN ---- */
+.dropdown { position: relative; }
+.dropdown-toggle {
+  background: none;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0;
+  transition: color 0.2s;
+}
+.dropdown-toggle:hover { color: var(--green); }
+.dropdown-toggle .arrow { font-size: 0.65rem; transition: transform 0.2s; }
+.dropdown.open .arrow { transform: rotate(180deg); }
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  min-width: 240px;
+  overflow: hidden;
+  z-index: 200;
+}
+.dropdown.open .dropdown-menu { display: block; }
+.dropdown-menu a {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  transition: background 0.15s;
+}
+.dropdown-menu a:last-child { border-bottom: none; }
+.dropdown-menu a:hover { background: var(--sand); }
+.dropdown-menu strong { font-size: 0.88rem; color: var(--charcoal); }
+.dropdown-menu span { font-size: 0.78rem; color: var(--text-light); }
+
 .menu-toggle {
   display: none;
   background: none;
@@ -444,6 +491,23 @@ footer {
   }
   .nav.open a { font-size: 1.2rem; }
   .nav.open .nav-cta { text-align: center; }
+  .dropdown { width: 100%; }
+  .dropdown-toggle {
+    font-size: 1.2rem;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .dropdown-menu {
+    position: static;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    border-left: 3px solid var(--green);
+    border-radius: 0;
+    margin: 4px 0 0 12px;
+    min-width: unset;
+  }
+  .dropdown-menu a { padding: 10px 14px; }
 
   .hero { min-height: 90vh; padding: 100px 20px 60px; }
   .hero h1 { font-size: 2.6rem; }

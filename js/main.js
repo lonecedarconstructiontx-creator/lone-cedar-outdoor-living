@@ -22,6 +22,15 @@ nav.querySelectorAll('a').forEach(link => {
   });
 });
 
+// Dropdown toggle
+const dropdown = document.querySelector('.dropdown');
+const dropdownToggle = document.querySelector('.dropdown-toggle');
+dropdownToggle.addEventListener('click', (e) => {
+  e.stopPropagation();
+  dropdown.classList.toggle('open');
+});
+document.addEventListener('click', () => dropdown.classList.remove('open'));
+
 // Scroll fade-in animations
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
