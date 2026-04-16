@@ -266,7 +266,7 @@ h2 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 16px; }
 .service-img {
   height: 200px;
   background-size: cover;
-  background-position: center;
+  background-position: center top;
   background-color: var(--sand);
 }
 .service-card h3 {
