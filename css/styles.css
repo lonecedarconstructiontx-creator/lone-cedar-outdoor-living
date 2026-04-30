@@ -221,6 +221,7 @@ h2 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 16px; }
   object-fit: cover;
   z-index: 0;
 }
+.hero-video-mobile { display: none; }
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -533,6 +534,12 @@ footer {
   body { padding-bottom: 56px; }
 
   .footer-inner { flex-direction: column; gap: 8px; text-align: center; }
+}
+
+@media (max-width: 640px) {
+  .hero { min-height: 177.78vw; padding-top: 0; }
+  .hero-video-desktop { display: none; }
+  .hero-video-mobile { display: block; }
 }
 
 /* Menu toggle active state */
