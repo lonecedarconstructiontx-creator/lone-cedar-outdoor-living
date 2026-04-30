@@ -501,7 +501,7 @@ footer {
     z-index: 99;
   }
   .nav.open a { font-size: 1.2rem; }
-  .nav.open .nav-cta { text-align: center; }
+  .nav.open .nav-cta { display: none; }
   .dropdown { width: 100%; }
   .dropdown-toggle {
     font-size: 1.2rem;
