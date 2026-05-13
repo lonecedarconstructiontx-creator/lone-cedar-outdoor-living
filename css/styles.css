@@ -353,6 +353,13 @@ h2 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 16px; }
   height: auto;
   border-radius: 8px;
 }
+.map-caption {
+  font-size: 0.85rem;
+  color: var(--charcoal);
+  opacity: 0.65;
+  margin: -12px 0 0;
+  text-align: center;
+}
 .areas-list {
   display: flex;
   flex-wrap: wrap;
