@@ -152,7 +152,7 @@
       <h2>Where We Work</h2>
       <p class="section-sub">Based in Hempstead. Serving Katy, Cypress, and the greater Houston metro.</p>
       <div class="map-wrap">
-        <img src="images/service-area-map.png" alt="Lone Cedar service area map — greater Houston" class="service-map-img">
+        <img id="area-map" src="images/service-area-map.png" alt="Lone Cedar service area map — greater Houston" class="service-map-img">
         <p class="map-caption">Based in Hempstead. Serving the greater Houston area within 40 miles.</p>
         <div class="areas-list">
           <span>Hempstead</span>
@@ -175,13 +175,28 @@
 
   <script>
     (function () {
-      var tags = document.querySelectorAll('.areas-list span');
+      var mapImg  = document.getElementById('area-map');
+      var DEFAULT = 'images/service-area-map.png';
+      var tags    = document.querySelectorAll('.areas-list span');
+
+      function toFilename(city) {
+        return 'images/map-' + city.toLowerCase().replace(/\s+/g, '-') + '.png';
+      }
+
+      // Preload all 13 city images
+      tags.forEach(function (tag) {
+        var img = new Image();
+        img.src = toFilename(tag.textContent.trim());
+      });
+
       tags.forEach(function (tag) {
         tag.addEventListener('mouseenter', function () {
+          mapImg.src = toFilename(tag.textContent.trim());
           tags.forEach(function (t) { t.classList.add('dimmed'); });
           tag.classList.remove('dimmed');
         });
         tag.addEventListener('mouseleave', function () {
+          mapImg.src = DEFAULT;
           tags.forEach(function (t) { t.classList.remove('dimmed'); });
         });
       });
