@@ -379,6 +379,8 @@ h2 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 16px; }
   transition: background 0.2s;
 }
 .areas-list span:hover { background: #ede8dd; }
+.areas-list span { transition: opacity .2s; }
+.areas-list span.dimmed { opacity: 0.25; }
 
 #areas .section-sub { margin: 0 auto; }
 

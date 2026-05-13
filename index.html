@@ -173,6 +173,21 @@
     </div>
   </section>
 
+  <script>
+    (function () {
+      var tags = document.querySelectorAll('.areas-list span');
+      tags.forEach(function (tag) {
+        tag.addEventListener('mouseenter', function () {
+          tags.forEach(function (t) { t.classList.add('dimmed'); });
+          tag.classList.remove('dimmed');
+        });
+        tag.addEventListener('mouseleave', function () {
+          tags.forEach(function (t) { t.classList.remove('dimmed'); });
+        });
+      });
+    })();
+  </script>
+
   <!-- CONTACT -->
   <section id="contact" class="section section-contact">
     <div class="container contact-grid">
