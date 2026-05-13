@@ -45,12 +45,32 @@ document.querySelectorAll('.service-card, .about-text, .about-img, .contact-info
   observer.observe(el);
 });
 
-// Form submission (placeholder — swap for real endpoint)
-document.getElementById('estimate-form').addEventListener('submit', (e) => {
+document.getElementById('estimate-form').addEventListener('submit', function (e) {
   e.preventDefault();
-  const btn = e.target.querySelector('button[type="submit"]');
-  btn.textContent = 'Sent! We\'ll be in touch.';
-  btn.style.background = '#4a6741';
-  btn.style.color = '#fff';
+  const form = e.target;
+  const btn  = form.querySelector('button[type="submit"]');
+  btn.textContent = 'Sending…';
   btn.disabled = true;
+
+  fetch('https://formspree.io/f/mqenoeqa', {
+    method:  'POST',
+    body:    new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(function (res) {
+    if (res.ok) {
+      btn.textContent = "Sent! We'll be in touch.";
+      btn.style.background = '#4a6741';
+      form.reset();
+    } else {
+      btn.textContent = 'Something went wrong — please call us.';
+      btn.style.background = '#7a2e2e';
+      btn.disabled = false;
+    }
+  })
+  .catch(function () {
+    btn.textContent = 'Something went wrong — please call us.';
+    btn.style.background = '#7a2e2e';
+    btn.disabled = false;
+  });
 });
