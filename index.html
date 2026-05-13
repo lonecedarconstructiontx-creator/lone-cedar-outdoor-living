@@ -151,81 +151,56 @@
     <div class="container">
       <h2>Where We Work</h2>
       <p class="section-sub">Based in Hempstead. Serving Katy, Cypress, and the greater Houston metro.</p>
-      <div class="map-wrap">
-        <img src="images/service-area-map.png" alt="Lone Cedar service area map — greater Houston" class="service-map-img">
-        <p class="map-caption">Based in Hempstead. Serving the greater Houston area within 40 miles.</p>
-        <div class="areas-list">
-          <span>Hempstead</span>
-          <span>Waller</span>
-          <span>Prairie View</span>
-          <span>Brookshire</span>
-          <span>Navasota</span>
-          <span>Katy</span>
-          <span>Cypress</span>
-          <span>Tomball</span>
-          <span>Spring</span>
-          <span>The Woodlands</span>
-          <span>Magnolia</span>
-          <span>Memorial</span>
-          <span>Sugar Land</span>
+            <div class="map-wrap">
+        <svg id="houston-map" viewBox="0 0 620 500" xmlns="http://www.w3.org/2000/svg">
+          <style>
+            .county { stroke:#6B5B4E; stroke-width:1; transition:fill .2s; }
+            .county-service { fill:#9E8060; }
+            .county-context { fill:#C8B99A; }
+            .county-service.active { fill:#4a7c3f; }
+            .city-dot { fill:#3d2611; stroke:#fff; stroke-width:1.2; transition:fill .2s; }
+            .city-group.active .city-dot { fill:#2d5a24; }
+            .city-lbl { font-family:sans-serif; font-size:9.5px; fill:#2e1a0e; pointer-events:none; }
+            .city-group.active .city-lbl { fill:#1a3d13; font-weight:700; }
+          </style>
+          <path id="county-waller" class="county county-service" d="M 190.1,206.5 L 295.5,206.5 L 295.5,287.0 L 190.1,287.0 Z"/><path id="county-harris" class="county county-service" d="M 295.5,213.0 L 485.7,213.0 L 485.7,358.7 L 434.0,358.7 L 341.0,326.1 L 324.5,282.6 Z"/><path id="county-montgomery" class="county county-service" d="M 279.0,89.1 L 454.7,89.1 L 454.7,213.0 L 279.0,213.0 Z"/><path id="county-grimes" class="county county-service" d="M 190.1,78.3 L 293.5,78.3 L 293.5,206.5 L 190.1,206.5 Z"/><path id="county-fortbend" class="county county-service" d="M 283.1,282.6 L 324.5,282.6 L 355.5,347.8 L 355.5,395.7 L 283.1,395.7 Z"/><path  class="county county-context" d="M 107.5,206.5 L 190.1,206.5 L 190.1,287.0 L 107.5,287.0 Z"/><path  class="county county-context" d="M 86.8,137.0 L 161.2,137.0 L 161.2,206.5 L 86.8,206.5 Z"/><path  class="county county-context" d="M 124.0,10.9 L 248.0,10.9 L 248.0,78.3 L 190.1,78.3 L 190.1,137.0 L 86.8,137.0 L 86.8,78.3 Z"/><path  class="county county-context" d="M 248.0,10.9 L 293.5,10.9 L 293.5,78.3 L 248.0,78.3 Z"/><path  class="county county-context" d="M 279.0,50.0 L 372.0,50.0 L 372.0,89.1 L 279.0,89.1 Z"/><path  class="county county-context" d="M 372.0,89.1 L 485.7,89.1 L 485.7,213.0 L 372.0,213.0 Z"/><path  class="county county-context" d="M 485.7,126.1 L 578.7,126.1 L 578.7,287.0 L 485.7,287.0 Z"/><path  class="county county-context" d="M 485.7,287.0 L 578.7,287.0 L 578.7,358.7 L 485.7,358.7 Z"/><path  class="county county-context" d="M 434.0,358.7 L 578.7,358.7 L 578.7,467.4 L 434.0,467.4 Z"/><path  class="county county-context" d="M 283.1,395.7 L 434.0,395.7 L 434.0,467.4 L 283.1,467.4 Z"/><path  class="county county-context" d="M 144.7,395.7 L 283.1,395.7 L 283.1,489.1 L 144.7,489.1 Z"/><path  class="county county-context" d="M 107.5,287.0 L 190.1,287.0 L 190.1,395.7 L 107.5,395.7 Z"/>
+          <g class="city-group" data-county="waller" data-city="Hempstead"><circle cx="231.9" cy="217.8" r="5" class="city-dot"/><text x="239.9" y="221.8" class="city-lbl">Hempstead</text></g><g class="city-group" data-county="waller" data-city="Waller"><circle cx="263.1" cy="226.7" r="5" class="city-dot"/><text x="271.1" y="230.7" class="city-lbl">Waller</text></g><g class="city-group" data-county="waller" data-city="Prairie View"><circle cx="250.7" cy="219.3" r="5" class="city-dot"/><text x="258.7" y="207.3" class="city-lbl">Prairie View</text></g><g class="city-group" data-county="waller" data-city="Brookshire"><circle cx="258.3" cy="286.3" r="5" class="city-dot"/><text x="266.3" y="290.3" class="city-lbl">Brookshire</text></g><g class="city-group" data-county="grimes" data-city="Navasota"><circle cx="230.4" cy="154.6" r="5" class="city-dot"/><text x="238.4" y="158.6" class="city-lbl">Navasota</text></g><g class="city-group" data-county="fortbend" data-city="Katy"><circle cx="284.2" cy="285.9" r="5" class="city-dot"/><text x="292.2" y="275.9" class="city-lbl">Katy</text></g><g class="city-group" data-county="harris" data-city="Cypress"><circle cx="310.0" cy="245.7" r="5" class="city-dot"/><text x="318.0" y="249.7" class="city-lbl">Cypress</text></g><g class="city-group" data-county="harris" data-city="Tomball"><circle cx="327.4" cy="218.0" r="5" class="city-dot"/><text x="335.4" y="222.0" class="city-lbl">Tomball</text></g><g class="city-group" data-county="harris" data-city="Spring"><circle cx="368.5" cy="221.7" r="5" class="city-dot"/><text x="376.5" y="225.7" class="city-lbl">Spring</text></g><g class="city-group" data-county="montgomery" data-city="The Woodlands"><circle cx="358.2" cy="203.7" r="5" class="city-dot"/><text x="366.2" y="195.7" class="city-lbl">The Woodlands</text></g><g class="city-group" data-county="montgomery" data-city="Magnolia"><circle cx="299.5" cy="193.7" r="5" class="city-dot"/><text x="307.5" y="197.7" class="city-lbl">Magnolia</text></g><g class="city-group" data-county="harris" data-city="Memorial"><circle cx="345.1" cy="290.7" r="5" class="city-dot"/><text x="353.1" y="294.7" class="city-lbl">Memorial</text></g><g class="city-group" data-county="fortbend" data-city="Sugar Land"><circle cx="323.4" cy="321.7" r="5" class="city-dot"/><text x="331.4" y="325.7" class="city-lbl">Sugar Land</text></g>
+        </svg>
+
+        <div class="areas-list" id="areas-list">
+          <span class="area-tag map-area" data-county="waller" data-city="Hempstead">Hempstead</span><span class="area-tag map-area" data-county="waller" data-city="Waller">Waller</span><span class="area-tag map-area" data-county="waller" data-city="Prairie View">Prairie View</span><span class="area-tag map-area" data-county="waller" data-city="Brookshire">Brookshire</span><span class="area-tag map-area" data-county="grimes" data-city="Navasota">Navasota</span><span class="area-tag map-area" data-county="fortbend" data-city="Katy">Katy</span><span class="area-tag map-area" data-county="harris" data-city="Cypress">Cypress</span><span class="area-tag map-area" data-county="harris" data-city="Tomball">Tomball</span><span class="area-tag map-area" data-county="harris" data-city="Spring">Spring</span><span class="area-tag map-area" data-county="montgomery" data-city="The Woodlands">The Woodlands</span><span class="area-tag map-area" data-county="montgomery" data-city="Magnolia">Magnolia</span><span class="area-tag map-area" data-county="harris" data-city="Memorial">Memorial</span><span class="area-tag map-area" data-county="fortbend" data-city="Sugar Land">Sugar Land</span>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="section section-contact">
-    <div class="container contact-grid">
-      <div class="contact-info">
-        <h2>Let's Plan Your Outdoor Space</h2>
-        <p>Free estimates, no obligation. We respond within 24 hours.</p>
-        <div class="contact-detail">
-          <strong>Phone</strong>
-          <a href="tel:+15628844805">(562) 884-4805</a>
-        </div>
-        <div class="contact-detail">
-          <strong>Email</strong>
-          <a href="mailto:lonecedarconstructiontx@gmail.com">lonecedarconstructiontx@gmail.com</a>
-        </div>
-        <div class="contact-detail">
-          <strong>Hours</strong>
-          <span>Mon&ndash;Sun, 6:00 AM &ndash; 9:00 PM</span>
-        </div>
-        <div class="contact-detail">
-          <strong>Location</strong>
-          <span>Hempstead, TX 77445</span>
-        </div>
-      </div>
-      <form class="contact-form" id="estimate-form">
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="tel" name="phone" placeholder="Phone number" required>
-        <input type="email" name="email" placeholder="Email (optional)">
-        <select name="service">
-          <option value="">What are you looking to build?</option>
-          <option>Pergola or Shade Structure</option>
-          <option>Patio or Hardscape</option>
-          <option>Outdoor Kitchen</option>
-          <option>Patio or French Doors</option>
-          <option>Pool Surround or Decking</option>
-          <option>Full Outdoor Living Project</option>
-          <option>Other</option>
-        </select>
-        <textarea name="details" placeholder="Tell us about your project — what you're envisioning, your location, and any timing needs..."></textarea>
-        <button type="submit" class="btn">Send Request</button>
-      </form>
-    </div>
-  </section>
+  <script>
+    (function () {
+      var tags   = document.querySelectorAll('.map-area');
+      var groups = document.querySelectorAll('.city-group');
+      var cPaths = document.querySelectorAll('.county-service');
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="container footer-inner">
-      <span>&copy; 2026 Lone Cedar Outdoor Living</span>
-      <span>Hempstead, TX &bull; <a href="tel:+15628844805">(562) 884-4805</a></span>
-      <span><a href="https://lonecedartx.com">Lone Cedar Construction</a></span>
-      <span><a href="https://g.page/r/CWNhxk540fgQEAE/review" target="_blank" rel="noopener">Happy with our work? Leave us a Google review.</a></span>
-    </div>
-  </footer>
+      function clearAll() {
+        tags.forEach(function (t) { t.classList.remove('active'); });
+        groups.forEach(function (g) { g.classList.remove('active'); });
+        cPaths.forEach(function (p) { p.classList.remove('active'); });
+      }
 
-  <script src="js/main.js"></script>
+      function activate(countyId) {
+        clearAll();
+        var cp = document.getElementById('county-' + countyId);
+        if (cp) cp.classList.add('active');
+        groups.forEach(function (g) {
+          if (g.dataset.county === countyId) g.classList.add('active');
+        });
+        tags.forEach(function (t) {
+          if (t.dataset.county === countyId) t.classList.add('active');
+        });
+      }
+
+      tags.forEach(function (tag) {
+        tag.addEventListener('mouseenter', function () { activate(tag.dataset.county); });
+        tag.addEventListener('mouseleave', clearAll);
+      });
+    })();
+  </script>
 </body>
 </html>

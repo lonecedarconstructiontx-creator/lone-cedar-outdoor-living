@@ -347,12 +347,14 @@ h2 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 16px; }
   gap: 28px;
   margin-top: 36px;
 }
-.service-map-img {
+#houston-map {
   width: 100%;
-  max-width: 720px;
+  max-width: 620px;
   height: auto;
   border-radius: 8px;
 }
+.area-tag { cursor: default; }
+.area-tag.active { background: #4a7c3f; color: #fff; }
 .map-caption {
   font-size: 0.85rem;
   color: var(--charcoal);
