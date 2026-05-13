@@ -340,12 +340,25 @@ h2 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 16px; }
 
 /* ---- AREAS ---- */
 #areas { text-align: center; }
+.map-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  margin-top: 36px;
+}
+.service-map-img {
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  border-radius: 8px;
+}
 .areas-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
-  margin-top: 36px;
+  margin-top: 0;
 }
 .areas-list span {
   padding: 12px 28px;
