@@ -347,12 +347,25 @@ h2 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 16px; }
   gap: 28px;
   margin-top: 36px;
 }
-#houston-map {
+#service-map {
   width: 100%;
-  max-width: 620px;
-  height: auto;
+  max-width: 760px;
+  height: 440px;
   border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.10);
 }
+.lc-tooltip {
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  padding: 4px 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+.lc-tooltip::before { display: none; }
 .area-tag { cursor: default; }
 .area-tag.active { background: #4a7c3f; color: #fff; }
 .map-caption {
